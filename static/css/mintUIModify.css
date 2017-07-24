@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/*
+请勿动 mintUI.css
+如果修改请在 mintUIModify 文件中修改mint ui 部分样式修改 ，
+*/
+.mint-swipe-indicator { background: #fff;  width: 0.8rem;  height: 0.8rem;  margin: 0 0.4rem; opacity:0.3; }
+.mint-swipe-indicator.is-active { opacity:0.6; background: #09bb07;}
+
+
+/*  弹窗的样式*/
+.mint-msgbox {  width: 28rem;  border-radius: 0.4rem;  }
+.mint-msgbox-header { padding:1.75rem 1rem 1rem;  font-size: 1.7rem; line-height: 3.5rem;  }
+.mint-msgbox-content { padding: 0 1rem 1.5rem;  min-height:2rem; line-height:1.85rem; font-size: 1.3rem; text-align: center;   }
+.mint-msgbox-input {  padding-top: 15px; }
+
+.mint-msgbox-title {  font-size: 1.7rem;   }
+.mint-msgbox-message {  color: #999;   line-height:1.85rem; font-size: 1.4rem;}
+.mint-msgbox-btns { font-size:1.7rem; height: 5rem; line-height: 5rem;  }
+.mint-msgbox-btn {  line-height: 5rem; font-size: 1.7rem; }
+
+.mint-msgbox-cancel:active {  color: #000;  }
+.mint-msgbox-confirm {  color: #00c200;  }
+.mint-msgbox-confirm:active {  color: #00c200;  }
+
+/* toast */
+.mint-toast { width:12rem; height: 12rem; padding: 0 !important; }
+.mint-toast-icon {  font-size: 3rem; }
+.mint-toast-text {  font-size: 1.3rem; }
+.mint-toast-icon{ width: 6rem; height: 6rem;}
+.icon-success{ background: url("../images/icon_ok.png") no-repeat center center; margin:1rem auto 0.5rem; background-size: 6rem 6rem;}
+.icon-loading{ background: url("../images/icon_load.gif") no-repeat center center;margin:1rem auto 0.5rem;background-size: 6rem 6rem;}
+.icon-warn{ background: url("../images/icon_warn.png") no-repeat center center;margin:1rem auto 0.5rem;background-size: 6rem 6rem;}
+/* action sheet */
+.mint-actionsheet{}
+.mint-actionsheet-list{margin-bottom: 0.6rem;}
+.mint-actionsheet-listitem,.mint-actionsheet-button{ height: 5rem; line-height: 5rem;font-size: 1.8rem; }
+/*index list */
+.mint-cell{  overflow: auto;}
+.mint-cell:last-child{ background-image: none; }
+.mint-cell-wrapper{}
+.mint-indexlist-content{ margin-right: 0 !important; }
+.mint-indexsection-index {  background: #f4f4f4; height: 3.3rem; line-height: 3.3rem;  color: #888; font-size: 1.4rem; border: 1px solid #e5e5e5;  border-left: 0; border-right: 0;  text-indent: 1.5rem;  }
+.mint-cell-wrapper{ width: auto; background-image: none; height: 4.35rem; line-height: 4.35rem; margin: 0 1.5rem; border-bottom: 1px solid #e5e5e5; font-size: 1.7rem;}
+
+.mint-cell:last-child .mint-cell-wrapper{ border-bottom: none; }
+.mint-indexlist-nav{width: 3.3rem; position: fixed; right: 0; top:10rem; bottom: auto; line-height: 1.65rem; background-color: rgba(255,255,255,.5);
+  text-align: center; padding: 0.7rem 0 ; z-index: 9; border-left: 0;  }
+.mint-indexlist-navitem{ font-size: 1.2rem; padding:0.55rem 0;  }
+.mint-indexlist-indicator{ font-size: 1.7rem; width: 6rem; height: 6rem;  display: flex; -webkit-align-items: center;  align-items: center;
+  -webkit-justify-content:space-around;  justify-content:space-around;}
+
+/*下拉刷新*/
+.mint-loadmore{ overflow: visible;}
