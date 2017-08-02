@@ -5,7 +5,7 @@
         <router-link class="link" to="/swiper">swiper</router-link>
       </li>
     </ul>
-    <com-swipe class="swiper" :auto="true" :interval="3000">
+    <com-swipe class="swiper"  :swipe-params.sync="swipeParams">
       <!-- pics -->
       <ul slot="pics" class="pics" >
         <li v-for="item in banners" class="swipe-item" >
@@ -13,7 +13,7 @@
         </li>
       </ul>
       <ol slot="dots" class="dots" >
-        <li v-for="i in dotsNumber" :class="{cur:dotIndex==i}">{{i}}</li>
+        <li v-for="i in dotsNumber" :class="{cur:swipeParams.index==i}">{{i}}</li>
       </ol>
     </com-swipe>
   </div>
@@ -22,9 +22,16 @@
   export default{
     data(){
       return {
-        dotIndex:1,
+        //需要配置参数如下
+        swipeParams: {
+          index: 1,        //默认第一个dot点选中
+          auto: true,      //是否自动轮播
+          interval: 3000,  //轮播间隔时间
+          transition: 'cubic-bezier(0.59, -0.03, 0.28, 1) 0.3s', //transition
+          transDelay: 'cubic-bezier(0.59, -0.03, 0.28, 1) 0s',//transitionEnd时候使用,注意：delay设置为0s
+        },
         banners:[
-          //前台处理一下，让数据变成原来的二倍（后台反馈的是4条，前台处理一下*2倍；）
+          //前台处理一下，让数据变成原来的二倍（例如后台反馈的是4条，前台处理一下*2倍；）
           {id:1,imgUrl:'../static/fodder/test1.jpg'},
           {id:2,imgUrl:'../static/fodder/test2.jpg'},
           {id:3,imgUrl:'../static/fodder/test3.jpg'},

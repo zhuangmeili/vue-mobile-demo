@@ -35,7 +35,10 @@
         timer:null,
       }
     },
-    props:['auto','interval'],
+    props:['swipeParams'],
+    computed:{
+
+    },
     methods:{
       initSwipe(){
         //初始化
@@ -47,12 +50,10 @@
         this.oDotLis=this.oDots.getElementsByTagName("li");
         this.len = this.oPics.getElementsByTagName("li").length/2;
         this.stepW = this.oPics.getBoundingClientRect().width;
-        this.maxMove = Math.floor(this.stepW / 4);
+        this.maxMove = Math.floor(this.stepW / 6);
         for (let i = 0; i < (this.len)*2; i++) {
           this.oImgs[i].style.width = this.stepW + 'px';
-          //this.oDotLis[i].className="";
         }
-        //this.oDotLis[0].className="cur";
       },
       getX(e) {
         let touch = e.touches[0];
@@ -60,26 +61,20 @@
       },
       //显示 图片
       showPics() {
-        this.oPics.style.transition='cubic-bezier(0.59, -0.03, 0.28, 1) 0.4s ';
-        this.oPics.style.WebkitTransition = 'cubic-bezier(0.59, -0.03, 0.28, 1) 0.4s ';
+        this.oPics.style.transition=this.swipeParams.transition;
+        this.oPics.style.WebkitTransition = this.swipeParams.transition;
         this.oPics.style.transform='translateX('+(-this.curPage*this.stepW)+'px)';
         this.oPics.style.WebkitTransform = 'translateX('+(-this.curPage*this.stepW)+'px)';
       },
-      test(){
-        console.log("get Test方法");
-      },
       // 改变焦点
       changeTabFocus() {
-        for(let i=0;i<this.len;i++){
-          //oDotLis[i].className="";
-        }
-        //oDotLis[curPage].className="cur";
+        this.swipeParams.index=this.curPage+1;
       },
       //transitionEnd方法
       transitionEndFn() {
         if(this.curPage==0){
-          this.oPics.style.transition='cubic-bezier(0.59, -0.03, 0.28, 1) 0s ';
-          this.oPics.style.WebkitTransition = 'cubic-bezier(0.59, -0.03, 0.28, 1) 0s ';
+          this.oPics.style.transition=this.swipeParams.transDelay;
+          this.oPics.style.WebkitTransition =this.swipeParams.transDelay;
           this.oPics.style.transform='translateX('+(-this.curPage*this.stepW)+'px)';
           this.oPics.style.WebkitTransform = 'translateX('+(-this.curPage*this.stepW)+'px)';
         }
@@ -106,8 +101,8 @@
             this.curPage=this.len;
           }
         }
-        this.oPics.style.transition='cubic-bezier(0.59, -0.03, 0.28, 1) 0s ';
-        this.oPics.style.WebkitTransition = 'cubic-bezier(0.59, -0.03, 0.28, 1) 0s ';
+        this.oPics.style.transition=this.swipeParams.transDelay;
+        this.oPics.style.WebkitTransition = this.swipeParams.transDelay;
         this.oPics.style.transform = 'translateX(' + (this.disX-this.curPage*this.stepW) + 'px)';
         this.oPics.style.WebkitTransform = 'translateX(' + (this.disX-this.curPage*this.stepW) + 'px)';
         return false;
@@ -146,7 +141,7 @@
             this.showPics();
           }
         }
-        if(!this.timer || this.auto){
+        if(!this.timer || this.swipeParams.auto){
           console.log("timer set!!设置timer");
           this.autoPlayLeft();
         }
@@ -155,7 +150,7 @@
       //自动向左边的轮播
       autoPlayLeft(){
         var _this=this;
-        if(this.auto){
+        if(this.swipeParams.auto){
           _this.timer=setInterval(function () {
             _this.curPage++;
             if(_this.curPage>=_this.len){
@@ -167,7 +162,7 @@
               _this.showPics();
             }
             _this.changeTabFocus(); //焦点变化
-          },_this.interval);
+          },_this.swipeParams.interval);
         }
       },
       swipe(){
@@ -178,7 +173,6 @@
         this.oPics.addEventListener('touchmove', function (e){_this.touchMove(e);});
         this.oPics.addEventListener('touchend', function (e){_this.touchEnd(e);});
         this.autoPlayLeft();  //调用autoplay
-
       }
     },
     mounted(){
