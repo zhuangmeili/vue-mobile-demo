@@ -53,6 +53,51 @@
         }
         //this.oDotLis[0].className="cur";
       },
+      getX(e) {
+        let touch = e.touches[0];
+        return touch.pageX;
+      },
+      //显示 图片
+      showPics() {
+        this.oPics.style.transition='cubic-bezier(0.59, -0.03, 0.28, 1) 0.4s ';
+        this.oPics.style.WebkitTransition = 'cubic-bezier(0.59, -0.03, 0.28, 1) 0.4s ';
+        this.oPics.style.transform='translateX('+(-this.curPage*this.stepW)+'px)';
+        this.oPics.style.WebkitTransform = 'translateX('+(-this.curPage*this.stepW)+'px)';
+      },
+      // 改变焦点
+      changeTabFocus() {
+        for(let i=0;i<this.len;i++){
+          //oDotLis[i].className="";
+        }
+        //oDotLis[curPage].className="cur";
+      },
+      //transitionEnd方法
+      transitionEndFn() {
+        if(this.curPage==0){
+          this.oPics.style.transition='cubic-bezier(0.59, -0.03, 0.28, 1) 0s ';
+          this.oPics.style.WebkitTransition = 'cubic-bezier(0.59, -0.03, 0.28, 1) 0s ';
+          this.oPics.style.transform='translateX('+(-this.curPage*this.stepW)+'px)';
+          this.oPics.style.WebkitTransform = 'translateX('+(-this.curPage*this.stepW)+'px)';
+        }
+      },
+      //自动向左边的轮播
+      autoPlayLeft(){
+        if(this.autoPlay){
+          //oPics.addEventListener("transitionend", transitionEndFn);
+          timer=setInterval(function () {
+            curPage++;
+            if(curPage>=len/2){
+              //1、先运动到最后
+              showPics();
+              //2、curPage  //一瞬间拉过来
+              curPage=curPage%(len/2);
+            }else{
+              showPics();
+            }
+            changeTabFocus(); //焦点变化
+          },intervalTime);
+        }
+      }
     },
     mounted(){
       this.$nextTick(function () {

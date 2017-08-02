@@ -5,7 +5,7 @@
         <router-link class="link" to="/swiper">swiper</router-link>
       </li>
     </ul>
-    <com-swipe class="swiper">
+    <com-swipe class="swiper" :auto-play="true">
       <!-- pics -->
       <ul slot="pics" class="pics" >
         <li v-for="item in banners" class="swipe-item" >
