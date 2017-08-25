@@ -8,12 +8,12 @@ import axios from 'axios'
 //全局组件 引入
 import MintUI from 'mint-ui'
 import comSwipe from '@/components/ComSwipe'
-
+import comModal from '@/components/ComModal'
 
 //全局组件 使用
 Vue.use(MintUI);
 Vue.use(comSwipe);
-
+Vue.use(comModal);
 //
 Vue.prototype.$http = axios;
 //组件的引入

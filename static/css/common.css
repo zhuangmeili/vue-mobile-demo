@@ -56,7 +56,7 @@
   border-radius: 6px; padding:0 1.9rem; background: #fff; border: 2px solid #1aad19;}
 
 .BtnLg{height: 4.4rem; line-height: 4.4rem; border-radius: 10px; padding: 0 2.5rem; }
-.BtnDefault{ }
+.BtnDefault{ color: #666; border-color: #ddd; }
 .BtnPrimary{ }
 .BtnDanger{ color: #f00; border: 2px solid #f00;}
 .BtnBlock{ display: block; text-align: center; width: 100%;}
@@ -110,7 +110,7 @@
 /* 定位 */
 .T0{ top: 0 !important;} .T2{ top: 0.1rem !important;}.T4{ top: 0.2rem !important;}.T5{ top: 0.25rem !important;} .T8{ top: 0.4rem !important;} .T10{ top: 0.5rem !important;}
 /* margin padding */
-.MR0{ margin-right: 0!important;}
+.MR0{ margin-right: 0!important;}.MR10{ margin-right: 0.5rem!important;}.MR20{ margin-right: 1rem!important;}
 
 .PR0{ padding-right: 0!important;}.PR2{ padding-right:0.1rem!important;}.PR4{ padding-right:0.2rem!important;}
 .PR5{ padding-right:0.25rem!important;}.PR8{ padding-right:0.4rem!important;}
