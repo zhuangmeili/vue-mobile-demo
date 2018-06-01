@@ -9,6 +9,10 @@ import axios from 'axios'
 import MintUI from 'mint-ui'
 import comSwipe from '@/components/ComSwipe'
 import comModal from '@/components/ComModal'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// require styles
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */);
 
 //全局组件 使用
 Vue.use(MintUI);

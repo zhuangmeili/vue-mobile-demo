@@ -12,6 +12,8 @@ import WatchView from '@/pages/WatchView';
 // 组件的引入
 import RouterDetail from '@/components/RouterDetail';
 import RouterList from '@/components/RouterList';
+import SwiperPage from '@/pages/SwiperPage';
+
 
 
 Vue.use(Router);
@@ -19,6 +21,7 @@ export default new Router({
   routes: [
     {path: '/', component: Index},
     {path: '/modal', component: Modal},
+    {path: '/swiper', component: SwiperPage},
     {
       path: '/router', component: RouteViews,
       children: [
