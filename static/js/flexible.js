@@ -4,6 +4,8 @@
  *  750px设计稿的话
  *      1rem===20px
  *
+ *      375 设计稿
+ *
  * px转换rem 的网址
  *    http://alurk.com/
  *    设计稿宽度  750     基础字体值  20px  选中 不处理border

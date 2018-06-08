@@ -5,6 +5,8 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 
+import http from './server/http'
+Vue.prototype.$http = http;
 //全局组件 引入
 import MintUI from 'mint-ui'
 import comSwipe from '@/components/ComSwipe'

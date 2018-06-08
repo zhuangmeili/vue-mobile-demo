@@ -8,6 +8,7 @@ import Index from '@/pages/Index'
 import Modal from '@/pages/Modal'
 import RouteViews from '@/pages/RouteViews'
 import WatchView from '@/pages/WatchView';
+import CreditList from '@/pages/CreditList';
 
 // 组件的引入
 import RouterDetail from '@/components/RouterDetail';
@@ -22,6 +23,7 @@ export default new Router({
     {path: '/', component: Index},
     {path: '/modal', component: Modal},
     {path: '/swiper', component: SwiperPage},
+    {path: '/credit', component: CreditList},
     {
       path: '/router', component: RouteViews,
       children: [
