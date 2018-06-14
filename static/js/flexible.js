@@ -2,13 +2,14 @@
  * Created by Administrator zhuang on 2017/05/20.
  * 现在定义如下：
  *  750px设计稿的话
- *      1rem===20px
+ *      1rem===40px
  *
- *      375 设计稿
+ * 375px 设计稿
+ *      1rem ===20px
  *
  * px转换rem 的网址
  *    http://alurk.com/
- *    设计稿宽度  750     基础字体值  20px  选中 不处理border
+ *    设计稿宽度  750     基础字体值  40px  选中 不处理border
  *
  */
 /*
@@ -19,7 +20,7 @@
   function c() {
     var b = f.getBoundingClientRect().width;
     //b / i > 540 && (b = 540 * i);//flex 2016-12-06注释掉
-    var c = 20*(b /750);
+    var c = 40*(b /750);
     f.style.fontSize = c + "px", k.rem = a.rem = c
   }
   var d, e = a.document,

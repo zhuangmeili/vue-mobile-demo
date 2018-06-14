@@ -16,6 +16,11 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 Vue.use(VueAwesomeSwiper, /* { default global options } */);
 
+
+import infiniteScroll from 'vue-infinite-scroll'
+Vue.use(infiniteScroll)
+
+
 //全局组件 使用
 Vue.use(MintUI);
 Vue.use(comSwipe);
